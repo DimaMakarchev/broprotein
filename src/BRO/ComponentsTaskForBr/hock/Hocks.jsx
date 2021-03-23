@@ -10,6 +10,7 @@ export const HockFor = (Component) => (props) => {
             <Provider store={store}>
                 <Component {...props}/>
             </Provider>
+
         // </Suspense>
     )
 };
