@@ -1,6 +1,7 @@
 import React from "react";
 import {FieldForField} from "./FieldForField";
 import style from "./Protein.module.css";
+import {ProteinFormComponent} from "./ProteinComponentForm";
 
 type TypeProtein = {
     currentPage: string,
@@ -12,7 +13,9 @@ type TypeProtein = {
     onSubmit?: undefined,
     handleSubmit: () => void,
     dataPreloader: Array<ObjectPreloader>,
-    functionCurrentPage: (number: number) => void;
+    functionCurrentPage: (number: number) => void,
+    storePage: number,
+    storeDateForPage: Array<ObjectPreloader>
 };
 
 type ObjectPreloader = {
@@ -30,7 +33,7 @@ export type TypebroObject = {
     name: string
 }
 debugger
-export const Protein: React.FC<TypeProtein> = React.memo(({currentPage, pageSize, totalSize, broObject: {id, name}, storeDataForm, storeDataFormReq, onSubmit, ...props}) => {
+export const Protein: React.FC<TypeProtein> = React.memo(({storePage,storeDateForPage,currentPage, pageSize, totalSize, broObject: {id, name}, storeDataForm, storeDataFormReq, onSubmit, ...props}) => {
     //useState + useEffect + useCallback
     console.log("bro");
     const pageCount = Math.ceil(totalSize / pageSize);
@@ -44,9 +47,11 @@ export const Protein: React.FC<TypeProtein> = React.memo(({currentPage, pageSize
         <>
             <div>
                 {/*TODO*/}
-                {page.map(p => <span className={style.page}>{p}</span>)}
+              {page.map(p => <span onClick={() => props.functionCurrentPage(p)} className={style.page}>{p}</span>)}
                 {/*{page.map(page => <span className={currentPage === page && style.page} onClick={() => props.functionCurrentPage(page)}>{page}</span>)}*/}
             </div>
+            <div>{storeDateForPage?storeDateForPage.map(value=><span>{value.title}</span>):null}</div>
+            <div>{storePage}</div>
             <h1>{name}</h1>
             {/*<h3>{props.dataPreloader.map(value=><div>{value}</div>)}</h3>*/}
             <fieldset>

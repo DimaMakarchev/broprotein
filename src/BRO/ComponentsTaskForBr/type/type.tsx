@@ -11,6 +11,11 @@ export type InitStateReq = {
     id: number,
     email: string
 }
+export type InitStateReqPreloader = {
+    userId: number,
+    id: number,
+    title: string,
+}
 
 export type InitStateForm = {
     name: string,
@@ -45,9 +50,21 @@ export type TypeActionRemove = {
 export type TypePreloaderDispatcher={
     type: typeof PRELOADER
 }
+export type TypePreloaderDispatcherPRELOADERDATA={
+    type:  typeof PRELOADERDATA ,
+    data:Array<Object>
+}
+export type TypePreloaderDispatcherPAGE={
+    type: typeof PAGE,
+    page:number
+}
 
 export type PreloaderType = {
-    loader: boolean
+    loader: boolean,
+    dateForPage:Array<InitStateReqPreloader>,
+    page:number
 };
 
 export const PRELOADER = "PRELOADER";
+export const PRELOADERDATA = "PRELOADERDATA";
+export const PAGE = "PAGE";

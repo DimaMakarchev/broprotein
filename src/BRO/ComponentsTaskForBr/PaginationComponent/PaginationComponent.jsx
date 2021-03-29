@@ -7,6 +7,7 @@ export const PaginationComponent = (props) => {
 
     const [page, setPage] = useState(5);
     const [dataPage, setDataPage] = useState([]);
+    const [dataFoto, setDataFoto] = useState();
 
     const handlerDataPage = async (page) => {
 
@@ -24,10 +25,20 @@ export const PaginationComponent = (props) => {
         setDataPage(data.data);
     }, []);
 
+    const methodFoto = (e) => {
+        debugger
+        if (e.target.value) {
+            setPage(e.target.value);
+        }
+    };
+
     return (
         <div>
+           {/*<img src={dataFoto} alt={"cool   "}/>*/}
+
+            <input type={"file"} onChange={methodFoto}/>
             <Page page={page} handlerDataPage={handlerDataPage} dataPage={dataPage}/>
         </div>
     )
 
-}
+};

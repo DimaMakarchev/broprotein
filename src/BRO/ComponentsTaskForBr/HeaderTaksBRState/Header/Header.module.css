@@ -6,7 +6,10 @@
 
 .link {
     text-decoration: none;
-    color: black;
+}
+.linkBr {
+    text-decoration: solid;
+    color:red;
 }
 .link:hover {
     color: red;

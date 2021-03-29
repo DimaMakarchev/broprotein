@@ -1,14 +1,14 @@
 import React, {memo, useCallback, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getSelectorForm, getSelectorFormReq, getSelectorLoader} from "../selectors/selectors";
+import {getDateForPage, getPage, getSelectorForm, getSelectorFormReq, getSelectorLoader} from "../selectors/selectors";
 import {methodFormDespatch} from "../../ReduxBr/stateBr/proteinstoreReducer";
 import {ProteinFormComponent} from "./ProteinComponentForm";
 import {requestApiUserForLogger} from "../api/axis";
-import {preloaderDispatcher} from "../../ReduxBr/stateBr/preloaderReducer";
+import {preloaderDispatcher, ThunkPreloaderPage} from "../../ReduxBr/stateBr/preloaderReducer";
 import {Preloader} from "./Preloader";
 
 
- const  ProteinComponentMemo=memo;
+ const  ProteinComponentMemo = memo;
 
    const ProteinComponent = ({...props}) => {
     const broObject = {
@@ -22,6 +22,9 @@ import {Preloader} from "./Preloader";
     const dispatch = useDispatch();
     const storeDataForm = useSelector(getSelectorForm());
     const storeDataFormReq = useSelector(getSelectorFormReq());
+    const storePage = useSelector(getPage());
+    debugger
+    const storeDateForPage = useSelector(getDateForPage());
     debugger
     const storeDataLoader = useSelector(getSelectorLoader());
 
@@ -36,16 +39,9 @@ import {Preloader} from "./Preloader";
     };
     //
     //functionCurrentPage
-    const functionCurrentPage = async (page) => {
-        dispatch(preloaderDispatcher());
-        debugger
-        let data =
-            await requestApiUserForLogger.getReqPage(page);
-        console.log(data.data);
+    const functionCurrentPage =  (page) => {
         debugger;
-        setDataPreloader(data.data);
-        setCurrentPage(page);
-        dispatch(preloaderDispatcher());
+        dispatch(ThunkPreloaderPage(page));
     };
 
     useEffect(async () => {
@@ -67,6 +63,8 @@ import {Preloader} from "./Preloader";
             {/*{dataPreloader.map(value=><div>{value.userId} + {value.id}+ {value.title}</div>)}*/}
 
             <ProteinFormComponent
+                storePage={storePage}
+                storeDateForPage={storeDateForPage}
                 functionCurrentPage={functionCurrentPage}
                 currentPage={currentPage}
                 pageSize={pageSize}

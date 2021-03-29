@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import {Route} from "react-router";
+import {Redirect, Route, Switch, withRouter} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 import {HeaderBr} from "./BRO/ComponentsTaskForBr/HeaderTaksBRState/Header/HeaderBr";
 import {FooterBr} from "./BRO/ComponentsTaskForBr/FooterTaksBRState/Footer/FooterBr";
@@ -17,16 +17,17 @@ function App() {
             <div className='wrapper'>
                 <HeaderBr/>
                 <div className='menu'>
-                    <Route path='/protein' render={HockFor(ProteinComponentMemo)}/>
+                    <Route exact='/protein' path='/protein' render={HockFor(ProteinComponentMemo)}/>
+                    <Route path='/protein/br' render={() => <div>ok</div>}/>
                     <Route path='/pagination' render={HockFor(PaginationComponent)}/>
-                    <Route path='/'/>
+                    <Route path='/' render={() => <Redirect to={'/protein'}/>}/>
+
                 </div>
                 <FooterBr/>
             </div>
         </BrowserRouter>
 
-    )
-        ;
+    );
 }
 
 export default App;

@@ -20,5 +20,16 @@ export const getSelectorFormReq = () => {
     //     return state.proteinstore.datareq;
     // }
 };
-
-
+export const getPage = () => {
+    return state => state.preloader.page
+    // return function state(state: AppRootReducerType) {
+    //     return state.proteinstore.datareq;
+    // }
+};
+export const getDateForPage = () => {
+    debugger
+    return state => state.preloader.dateForPage[0]
+    // return function state(state: AppRootReducerType) {
+    //     return state.proteinstore.datareq;
+    // }
+};
