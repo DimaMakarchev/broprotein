@@ -6,6 +6,7 @@ import {ProteinFormComponent} from "./ProteinComponentForm";
 import {requestApiUserForLogger} from "../api/axis";
 import {preloaderDispatcher, ThunkPreloaderPage} from "../../ReduxBr/stateBr/preloaderReducer";
 import {Preloader} from "./Preloader";
+import {compose} from "redux";
 
 
  const  ProteinComponentMemo = memo;
@@ -79,4 +80,6 @@ import {Preloader} from "./Preloader";
     );
 
 };
-export default ProteinComponentMemo(ProteinComponent);
+
+// export default ProteinComponentMemo(ProteinComponent);
+export default compose(ProteinComponentMemo)(ProteinComponent);

@@ -37,4 +37,13 @@ export const requestApiUserForLogger = {
         );
         // return init.get<TypeGet>(url, config );
     },
+    getReqServeBR() {
+        return  axios.get(
+            // baseURL: 'http://jsonplaceholder.typicode.com/users/1',
+            // baseURL: 'https://jsonplaceholder.typicode.com/posts?_start=0&_limit=8',
+             `http://localhost:8456/`,
+
+        );
+        // return init.get<TypeGet>(url, config );
+    },
 };
