@@ -9,9 +9,10 @@ import {Preloader} from "./Preloader";
 import {compose} from "redux";
 
 
- const  ProteinComponentMemo = memo;
+const ComposeProteinComponent = compose(memo);
+// const  ProteinComponentMemo = memo;
 
-   const ProteinComponent = ({...props}) => {
+const ProteinComponent = ({...props}) => {
     const broObject = {
         id: 1,
         name: "BROOOOOOOOOO"
@@ -40,7 +41,7 @@ import {compose} from "redux";
     };
     //
     //functionCurrentPage
-    const functionCurrentPage =  (page) => {
+    const functionCurrentPage = (page) => {
         debugger;
         dispatch(ThunkPreloaderPage(page));
     };
@@ -82,4 +83,4 @@ import {compose} from "redux";
 };
 
 // export default ProteinComponentMemo(ProteinComponent);
-export default compose(ProteinComponentMemo)(ProteinComponent);
+export default ComposeProteinComponent(ProteinComponent);

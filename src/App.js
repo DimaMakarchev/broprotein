@@ -4,7 +4,7 @@ import {Redirect, Route} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 import {HeaderBr} from "./BRO/ComponentsTaskForBr/HeaderTaksBRState/Header/HeaderBr";
 import {FooterBr} from "./BRO/ComponentsTaskForBr/FooterTaksBRState/Footer/FooterBr";
-import ProteinComponentMemo from "./BRO/ComponentsTaskForBr/ProteinComponent/ProteinComponentMemo";
+import ComposeProteinComponent from "./BRO/ComponentsTaskForBr/ProteinComponent/ProteinComponentMemo";
 
 import {PaginationComponent} from "./BRO/ComponentsTaskForBr/PaginationComponent/PaginationComponent";
 import {HockFor} from "./BRO/ComponentsTaskForBr/hock/Hocks";
@@ -18,7 +18,7 @@ function App() {
             <div className='wrapper'>
                 <HeaderBr/>
                 <div className='menu'>
-                    <Route exact='/protein' path='/protein' render={HockFor(ProteinComponentMemo)}/>
+                    <Route exact='/protein' path='/protein' render={HockFor(ComposeProteinComponent)}/>
                     <Route path='/protein/br' render={() => <div>ok</div>}/>
                     <Route path='/pagination' render={HockFor(PaginationComponent)}/>
                     <Route path='/errortest' render={HockFor(ErrorTestComponentMemo)}/>
