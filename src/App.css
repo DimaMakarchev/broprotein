@@ -1,23 +1,23 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
-  text-decoration: none;
-  box-sizing: border-box;
+  /*background-color: #ffffff;*/
+  /*text-decoration: none;*/
+  /*box-sizing: border-box;*/
 }
 
 
-.wrapper {
-  width: 1600px;
-  border: 2px black solid;
-  height: 1000px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.menu{
-  height: 100%;
-  background: url("../src/menuback.jpg") no-repeat ;
-  background-size: contain;
-
-}
+/*.wrapper {*/
+/*  width: 1580px;*/
+/*  border: 2px black solid;*/
+/*  height: 700px;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  flex-direction: column;*/
+/*}*/
+/*.menu{*/
+/*  height: 100%;*/
+/*  background: url("../src/menuback.jpg") no-repeat ;*/
+/*  background-size: contain;*/
+/*  !*overflow-x: visible;*!*/
+/*}*/

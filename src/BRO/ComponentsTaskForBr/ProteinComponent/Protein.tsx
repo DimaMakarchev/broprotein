@@ -32,7 +32,6 @@ export type TypebroObject = {
     id: number,
     name: string
 }
-debugger
 export const Protein: React.FC<TypeProtein> = React.memo(({storePage,storeDateForPage,currentPage, pageSize, totalSize, broObject: {id, name}, storeDataForm, storeDataFormReq, onSubmit, ...props}) => {
     //useState + useEffect + useCallback
     console.log("bro");
@@ -42,7 +41,6 @@ export const Protein: React.FC<TypeProtein> = React.memo(({storePage,storeDateFo
         page.push(i);
     }
 
-    debugger
     return (
         <>
             <div>

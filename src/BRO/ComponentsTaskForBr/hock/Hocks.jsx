@@ -3,7 +3,7 @@ import {store} from "../../ReduxBr/store";
 import React, {Suspense} from "react";
 
 
-export const HockFor = (Component) => (props) => {
+export const HockForProvaderAdd = (Component) => (props) => {
 
     return (
         // <Suspense fallback={<div>...Bro OK</div>}>

@@ -4,12 +4,19 @@ import {reducer as formReducer} from 'redux-form';
 import {proteinstoreReducer} from "./stateBr/proteinstoreReducer";
 import {preloaderReducer} from "./stateBr/preloaderReducer";
 import {errortestReducer} from "./stateBr/errortestReducer";
+import {securityReducer} from "./stateBr/securityReducer";
 
+const init={
+    name:'bro',
+    password:1234,
+};
 const rootReducers = combineReducers({
     form: formReducer,
     preloader: preloaderReducer,
     proteinstore: proteinstoreReducer,
     errortest: errortestReducer,
+    security: securityReducer,
+
 
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

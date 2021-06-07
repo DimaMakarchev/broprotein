@@ -3,11 +3,12 @@ export const validatorValue = (value) => {
 };
 
 export const validatorLenght = (lenghtMax) => (value) => {
-
+debugger
     return value.length > lenghtMax ? `lenghtMax bro ${lenghtMax}` : undefined;
 };
 
 
 export const validationRepit = (data) => {
+    debugger
     return data ? undefined : "BROOOOOOO"
 };

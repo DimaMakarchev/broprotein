@@ -14,6 +14,28 @@ export const getSelectorForm = () => {
     // }
 
 };
+export const getSelectorFormPassword = () => {
+    return state => state.proteinstore.password
+    // return function state(state: AppRootReducerType) {
+    //     return state.proteinstore.name;
+    // }
+
+};
+export const getSelectorSecurityReq = () => {
+    debugger
+    return state => state.security.securitytrue
+    // return function state(state: AppRootReducerType) {
+    //     return state.proteinstore.name;
+    // }
+
+};export const getSelectorSecurityMes = () => {
+    debugger
+    return state => state.security.messages
+    // return function state(state: AppRootReducerType) {
+    //     return state.proteinstore.name;
+    // }
+
+};
 export const getSelectorFormReq = () => {
     return state => state.proteinstore.datareq
     // return function state(state: AppRootReducerType) {
@@ -27,7 +49,6 @@ export const getPage = () => {
     // }
 };
 export const getDateForPage = () => {
-    debugger
     return state => state.preloader.dateForPage[0]
     // return function state(state: AppRootReducerType) {
     //     return state.proteinstore.datareq;

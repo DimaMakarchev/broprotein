@@ -13,6 +13,9 @@ export class HeaderBr extends Component {
                         <div className={style.nav}><NavLink to='/protein' className={style.link}>Protein</NavLink></div>
                         <div className={style.nav}><NavLink to='/pagination' className={style.link}>Pagination</NavLink></div>
                         <div className={style.nav}><NavLink to='/errortest' className={style.link}>Error test</NavLink></div>
+                        <div className={style.nav}><NavLink to='/security' className={style.link}>Security</NavLink></div>
+                        <div className={style.nav}><NavLink to='/securitypagetest' className={style.link}>SecurityPageTest</NavLink></div>
+                        <div className={style.nav}><NavLink to='/chat' className={style.link}>Chat</NavLink></div>
                         <div className={style.nav}><NavLink to='/' className={style.link}>Start</NavLink></div>
                     </div>
                 </div>

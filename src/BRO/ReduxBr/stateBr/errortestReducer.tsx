@@ -58,7 +58,6 @@ export const dispatchErrorAction = (error?: string): actionError => ({type: ERRO
 
 
 export const ThunkErrorBro = (error?: string) => async (dispatch: (arg0: { type: typeof ERROR; }) => void) => {
-    debugger
     dispatch(dispatchErrorAction("BROOO"));
     setTimeout(() =>{ dispatch(dispatchErrorAction("BROOO"))}, 30000);
 

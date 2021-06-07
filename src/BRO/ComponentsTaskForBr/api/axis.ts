@@ -22,28 +22,61 @@ type TypeGet = {
     }
 }
 
+// const headers = {
+//     'Content-Type': 'application/json',
+// };
+// const data: {
+//     firstName: 'Fred',
+//     lastName: 'Flintstone'
+// }
+
+let data = {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+};
+
+let axiosConfig = {
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        // "Access-Control-Allow-Origin": "*",
+    }
+};
 
 export const requestApiUserForLogger = {
+
     getReq(url?: string, config?: AxiosRequestConfig) {
         return init.get<TypeGet>(<string>url, config);
         // return init.get<TypeGet>(url, config );
     },
     getReqPage(page?: number) {
-        return  axios.get(
+        return axios.get(
             // baseURL: 'http://jsonplaceholder.typicode.com/users/1',
             // baseURL: 'https://jsonplaceholder.typicode.com/posts?_start=0&_limit=8',
-             `http://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`,
-
+            `http://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`,
         );
         // return init.get<TypeGet>(url, config );
     },
     getReqServeBR() {
-        return  axios.get(
+        return axios.get(
             // baseURL: 'http://jsonplaceholder.typicode.com/users/1',
             // baseURL: 'https://jsonplaceholder.typicode.com/posts?_start=0&_limit=8',
-             `http://localhost:8456/`,
+            `http://localhost:8456/`,
+        )
+    },
 
+    getReqSecurity() {
+        return axios.get(
+            // baseURL: 'http://jsonplaceholder.typicode.com/users/1',
+            // baseURL: 'https://jsonplaceholder.typicode.com/posts?_start=0&_limit=8',
+            `http://localhost:8456/`,
         );
         // return init.get<TypeGet>(url, config );
     },
+
+    postReqSecurity() {
+        return axios.post(`http://localhost:8456/`, {
+            firstName: "Fred",
+            lastName: "Flintstone"
+        })
+    }
 };

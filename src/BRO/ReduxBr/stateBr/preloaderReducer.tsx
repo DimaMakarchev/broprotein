@@ -23,22 +23,18 @@ const initState: PreloaderType = {
 export const preloaderReducer = (state = initState, action: TypePreloaderDispatcher | TypePreloaderDispatcherPAGE | TypePreloaderDispatcherPRELOADERDATA) => {
     switch (action.type) {
         case PRELOADER:
-            debugger
             return {
                 ...state, loader: !state.loader
             };
         case PRELOADERDATA:
-            debugger
             return {
                 ...state, dateForPage: [action.data]
             };
         case PAGE:
-            debugger
             return {
                 ...state, page: action.page
             };
         default:
-            debugger
             return state;
     }
 };
@@ -51,13 +47,11 @@ export const dataPreloaderDispatcher = (data: Array<Object>): TypePreloaderDispa
 });
 export const CurrentPageDispatcher = (page: number): TypePreloaderDispatcherPAGE => ({type: PAGE, page});
 
-export const ThunkPreloaderPage = (page: number) => async (dispatch: (arg0: { type: "PRELOADER" | "PRELOADERDATA" | "PAGE"; }) => void) => {
-    debugger;
+export const ThunkPreloaderPage = (page: number) => async (dispatch: (arg0: { type: "PRELOADER" | "PRELOADERDATA" | "PAGE"; data?: Object[]; page?: number; }) => void) => {
     dispatch(preloaderDispatcher());
-    debugger
     let data = await requestApiUserForLogger.getReqPage(page);
     // console.log(data.data);
-    debugger;
+    debugger
     dispatch( dataPreloaderDispatcher(data.data));
     dispatch(CurrentPageDispatcher(page));
     dispatch(preloaderDispatcher());

@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {AppClone} from "./AppClone";
 
 ReactDOM.render(
     <React.StrictMode>
-            <App/>
+            {/*<SamuraiJSApp/>*/}
+            <AppClone/>
     </React.StrictMode>,
     document.getElementById('root')
 );

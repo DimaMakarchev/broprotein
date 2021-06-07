@@ -15,7 +15,9 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "latest",
     "redux-thunk": "latest",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "query-string": "latest",
+    "queryString": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

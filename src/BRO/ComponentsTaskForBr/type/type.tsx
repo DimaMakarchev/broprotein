@@ -3,7 +3,7 @@
 */
 export type InitState = {
     name: string,
-    password: number,
+    password: string,
     datareq: Array<InitStateReq>
 }
 
@@ -25,6 +25,8 @@ export type InitStateForm = {
 
 export const FORM_DATA = "protein/FORM_DATA";
 export const REQUEST_DATA = "protein/REQUEST_DATA";
+export const TEST = "protein/TEST";
+
 export const REMOVE = "protein/REMOVE";
 
 
@@ -41,6 +43,10 @@ export type TypeActionReq = {
 export type TypeActionRemove = {
     type: typeof REMOVE,
     data: number,
+
+}
+export type TypeActionTEST = {
+    type: typeof TEST,
 
 }
 /*

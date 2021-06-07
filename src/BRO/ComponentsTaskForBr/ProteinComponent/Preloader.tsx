@@ -7,4 +7,4 @@ export const Preloader = (props: any) => {
             <img src={preLoad} alt={'ok'}/>
         </>
     )
-}
+};
